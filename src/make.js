@@ -1,4 +1,4 @@
-function make(...temp) {
+module.exports = function make(...temp) {
   const masElem = [];
   const foo = function (...arg) {
     if (typeof arg[0] === 'function') {
@@ -12,10 +12,4 @@ function make(...temp) {
     return foo;
   };
   return foo(...temp);
-}
-
-function sum(a, b) {
-  return a + b;
-}
-
-console.log(make(15)(34, 21, 666)(41)(sum));
+};
